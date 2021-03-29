@@ -3,7 +3,7 @@
 ## Overview ##
 Lab 4: Alternating-Bit-Protocol. \
 An SMTP client delivers email with text and image content.
-Implement the [ABP state machine](https://github.com/tim-kao/Computer-Networks-Lab4-Reliable-Transport-Protocol-Alternating-Bit-Protocol-Programming-with-C/blob/main/prog2.c)
+Implement the ABP state machine![image](https://github.com/tim-kao/Computer-Networks-Lab4-Reliable-Transport-Protocol-Alternating-Bit-Protocol-Programming-with-C/blob/main/prog2.c)
 ## Demo ##
 [Output log](https://github.com/tim-kao/Computer-Networks-Lab4-Reliable-Transport-Protocol-Alternating-Bit-Protocol-Programming-with-C/blob/main/output.log)
 
