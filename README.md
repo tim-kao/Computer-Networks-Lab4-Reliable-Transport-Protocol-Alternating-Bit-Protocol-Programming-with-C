@@ -7,9 +7,6 @@ Implement the ABP state machine ![image](https://github.com/tim-kao/Computer-Net
 ## Demo ##
 [Output log](https://github.com/tim-kao/Computer-Networks-Lab4-Reliable-Transport-Protocol-Alternating-Bit-Protocol-Programming-with-C/blob/main/output.log)
 
-## Feature ##
-1. User define CHUNK_SIZE (default = 20)
-2. 
 ##  Usage Examples ##
 
    
