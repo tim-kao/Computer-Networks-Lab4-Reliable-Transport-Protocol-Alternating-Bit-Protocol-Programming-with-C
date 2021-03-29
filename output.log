@@ -1,0 +1,150 @@
+abp.c: In function 'A_output':
+abp.c:72:9: warning: implicit declaration of function 'memmove' [-Wimplicit-function-declaration]
+   72 |         memmove(packet.payload, message.data, CHUNK_SIZE);
+      |         ^~~~~~~
+abp.c:72:9: warning: incompatible implicit declaration of built-in function 'memmove'
+abp.c:2:1: note: include '<string.h>' or provide a declaration of 'memmove'
+    1 | #include <stdio.h>
+  +++ |+#include <string.h>
+    2 | 
+abp.c:73:27: warning: implicit declaration of function 'get_checksum' [-Wimplicit-function-declaration]
+   73 |         packet.checksum = get_checksum(&packet);
+      |                           ^~~~~~~~~~~~
+abp.c:76:9: warning: implicit declaration of function 'tolayer3'; did you mean 'layer'? [-Wimplicit-function-declaration]
+   76 |         tolayer3(0, packet);
+      |         ^~~~~~~~
+      |         layer
+abp.c:77:9: warning: implicit declaration of function 'starttimer' [-Wimplicit-function-declaration]
+   77 |         starttimer(0, A.rtt * 2);
+      |         ^~~~~~~~~~
+abp.c:78:9: warning: implicit declaration of function 'print'; did you mean 'printf'? [-Wimplicit-function-declaration]
+   78 |         print("A_output sent a packet%s\n", message.data);
+      |         ^~~~~
+      |         printf
+abp.c: At top level:
+abp.c:82:1: warning: return type defaults to 'int' [-Wimplicit-int]
+   82 | B_output(message)  /* need be completed only for extra credit */
+      | ^~~~~~~~
+abp.c: In function 'A_input':
+abp.c:101:7: warning: implicit declaration of function 'stoptimer' [-Wimplicit-function-declaration]
+  101 |       stoptimer(0);  //ACK, reset timer
+      |       ^~~~~~~~~
+abp.c: At top level:
+abp.c:113:1: warning: return type defaults to 'int' [-Wimplicit-int]
+  113 | A_timerinterrupt()
+      | ^~~~~~~~~~~~~~~~
+abp.c: In function 'B_input':
+abp.c:141:9: warning: implicit declaration of function 'send_ack' [-Wimplicit-function-declaration]
+  141 |         send_ack(1, B.seqnum);
+      |         ^~~~~~~~
+abp.c:151:7: warning: implicit declaration of function 'tolayer5'; did you mean 'layer'? [-Wimplicit-function-declaration]
+  151 |       tolayer5(1, packet.payload);
+      |       ^~~~~~~~
+      |       layer
+abp.c: At top level:
+abp.c:158:1: warning: return type defaults to 'int' [-Wimplicit-int]
+  158 | B_timerinterrupt()
+      | ^~~~~~~~~~~~~~~~
+abp.c:164:1: warning: return type defaults to 'int' [-Wimplicit-int]
+  164 | B_init()
+      | ^~~~~~
+abp.c:219:1: warning: return type defaults to 'int' [-Wimplicit-int]
+  219 | main()
+      | ^~~~
+abp.c: In function 'main':
+abp.c:228:4: warning: implicit declaration of function 'init'; did you mean 'B_init'? [-Wimplicit-function-declaration]
+  228 |    init();
+      |    ^~~~
+      |    B_init
+abp.c:254:13: warning: implicit declaration of function 'generate_next_arrival' [-Wimplicit-function-declaration]
+  254 |             generate_next_arrival();   /* set up future arrival */
+      |             ^~~~~~~~~~~~~~~~~~~~~
+abp.c:281:6: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+  281 |      free(eventptr->pktptr);          /* free the memory for packet */
+      |      ^~~~
+abp.c:281:6: warning: incompatible implicit declaration of built-in function 'free'
+abp.c:2:1: note: include '<stdlib.h>' or provide a declaration of 'free'
+    1 | #include <stdio.h>
+  +++ |+#include <stdlib.h>
+    2 | 
+abp.c:292:9: warning: incompatible implicit declaration of built-in function 'free'
+  292 |         free(eventptr);
+      |         ^~~~
+abp.c:292:9: note: include '<stdlib.h>' or provide a declaration of 'free'
+abp.c: At top level:
+abp.c:301:1: warning: return type defaults to 'int' [-Wimplicit-int]
+  301 | init()                         /* initialize the simulator */
+      | ^~~~
+abp.c: In function 'init':
+abp.c:320:4: warning: implicit declaration of function 'srand' [-Wimplicit-function-declaration]
+  320 |    srand(9999);              /* init random number generator */
+      |    ^~~~~
+abp.c:329:5: warning: implicit declaration of function 'exit' [-Wimplicit-function-declaration]
+  329 |     exit();
+      |     ^~~~
+abp.c:329:5: warning: incompatible implicit declaration of built-in function 'exit'
+abp.c:329:5: note: include '<stdlib.h>' or provide a declaration of 'exit'
+abp.c:329:5: error: too few arguments to function 'exit'
+abp.c: In function 'jimsrand':
+abp.c:349:7: warning: implicit declaration of function 'rand' [-Wimplicit-function-declaration]
+  349 |   x = rand()/mmm;            /* x should be uniform in [0,1] */
+      |       ^~~~
+abp.c: At top level:
+abp.c:357:1: warning: return type defaults to 'int' [-Wimplicit-int]
+  357 | generate_next_arrival()
+      | ^~~~~~~~~~~~~~~~~~~~~
+abp.c: In function 'generate_next_arrival':
+abp.c:361:11: warning: conflicting types for built-in function 'malloc'; expected 'void *(long long unsigned int)' [-Wbuiltin-declaration-mismatch]
+  361 |     char *malloc();
+      |           ^~~~~~
+abp.c:361:11: note: 'malloc' is declared in header '<stdlib.h>'
+abp.c:377:4: warning: implicit declaration of function 'insertevent' [-Wimplicit-function-declaration]
+  377 |    insertevent(evptr);
+      |    ^~~~~~~~~~~
+abp.c: At top level:
+abp.c:381:1: warning: return type defaults to 'int' [-Wimplicit-int]
+  381 | insertevent(p)
+      | ^~~~~~~~~~~
+abp.c:419:1: warning: return type defaults to 'int' [-Wimplicit-int]
+  419 | printevlist()
+      | ^~~~~~~~~~~
+abp.c:435:1: warning: return type defaults to 'int' [-Wimplicit-int]
+  435 | stoptimer(AorB)
+      | ^~~~~~~~~
+abp.c: In function 'stoptimer':
+abp.c:458:8: warning: incompatible implicit declaration of built-in function 'free'
+  458 |        free(q);
+      |        ^~~~
+abp.c:458:8: note: include '<stdlib.h>' or provide a declaration of 'free'
+abp.c:459:8: warning: 'return' with no value, in function returning non-void
+  459 |        return;
+      |        ^~~~~~
+abp.c:435:1: note: declared here
+  435 | stoptimer(AorB)
+      | ^~~~~~~~~
+abp.c: At top level:
+abp.c:465:1: warning: return type defaults to 'int' [-Wimplicit-int]
+  465 | starttimer(AorB,increment)
+      | ^~~~~~~~~~
+abp.c: In function 'starttimer':
+abp.c:481:7: warning: 'return' with no value, in function returning non-void
+  481 |       return;
+      |       ^~~~~~
+abp.c:465:1: note: declared here
+  465 | starttimer(AorB,increment)
+      | ^~~~~~~~~~
+abp.c: At top level:
+abp.c:494:1: warning: return type defaults to 'int' [-Wimplicit-int]
+  494 | tolayer3(AorB,packet)
+      | ^~~~~~~~
+abp.c: In function 'tolayer3':
+abp.c:512:7: warning: 'return' with no value, in function returning non-void
+  512 |       return;
+      |       ^~~~~~
+abp.c:494:1: note: declared here
+  494 | tolayer3(AorB,packet)
+      | ^~~~~~~~
+abp.c: At top level:
+abp.c:567:1: warning: return type defaults to 'int' [-Wimplicit-int]
+  567 | tolayer5(AorB,datasent)
+      | ^~~~~~~~
