@@ -6,7 +6,7 @@ An SMTP client delivers email with text and image content.
 
 ## Demo ##
 Output log
-![image](https://github.com/tim-kao/Computer-Networks-Lab4-Reliable-Transport-Protocol-Alternating-Bit-Protocol-Programming-with-C/blob/main/output.log)
+![file](https://github.com/tim-kao/Computer-Networks-Lab4-Reliable-Transport-Protocol-Alternating-Bit-Protocol-Programming-with-C/blob/main/output.log)
 
 ## Feature ##
 1. User define CHUNK_SIZE (default = 20)
