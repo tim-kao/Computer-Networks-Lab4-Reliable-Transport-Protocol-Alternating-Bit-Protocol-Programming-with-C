@@ -1,150 +1,289 @@
-abp.c: In function 'A_output':
-abp.c:72:9: warning: implicit declaration of function 'memmove' [-Wimplicit-function-declaration]
-   72 |         memmove(packet.payload, message.data, CHUNK_SIZE);
-      |         ^~~~~~~
-abp.c:72:9: warning: incompatible implicit declaration of built-in function 'memmove'
-abp.c:2:1: note: include '<string.h>' or provide a declaration of 'memmove'
-    1 | #include <stdio.h>
-  +++ |+#include <string.h>
-    2 | 
-abp.c:73:27: warning: implicit declaration of function 'get_checksum' [-Wimplicit-function-declaration]
-   73 |         packet.checksum = get_checksum(&packet);
-      |                           ^~~~~~~~~~~~
-abp.c:76:9: warning: implicit declaration of function 'tolayer3'; did you mean 'layer'? [-Wimplicit-function-declaration]
-   76 |         tolayer3(0, packet);
-      |         ^~~~~~~~
-      |         layer
-abp.c:77:9: warning: implicit declaration of function 'starttimer' [-Wimplicit-function-declaration]
-   77 |         starttimer(0, A.rtt * 2);
-      |         ^~~~~~~~~~
-abp.c:78:9: warning: implicit declaration of function 'print'; did you mean 'printf'? [-Wimplicit-function-declaration]
-   78 |         print("A_output sent a packet%s\n", message.data);
-      |         ^~~~~
-      |         printf
-abp.c: At top level:
-abp.c:82:1: warning: return type defaults to 'int' [-Wimplicit-int]
-   82 | B_output(message)  /* need be completed only for extra credit */
-      | ^~~~~~~~
-abp.c: In function 'A_input':
-abp.c:101:7: warning: implicit declaration of function 'stoptimer' [-Wimplicit-function-declaration]
-  101 |       stoptimer(0);  //ACK, reset timer
-      |       ^~~~~~~~~
-abp.c: At top level:
-abp.c:113:1: warning: return type defaults to 'int' [-Wimplicit-int]
-  113 | A_timerinterrupt()
-      | ^~~~~~~~~~~~~~~~
-abp.c: In function 'B_input':
-abp.c:141:9: warning: implicit declaration of function 'send_ack' [-Wimplicit-function-declaration]
-  141 |         send_ack(1, B.seqnum);
-      |         ^~~~~~~~
-abp.c:151:7: warning: implicit declaration of function 'tolayer5'; did you mean 'layer'? [-Wimplicit-function-declaration]
-  151 |       tolayer5(1, packet.payload);
-      |       ^~~~~~~~
-      |       layer
-abp.c: At top level:
-abp.c:158:1: warning: return type defaults to 'int' [-Wimplicit-int]
-  158 | B_timerinterrupt()
-      | ^~~~~~~~~~~~~~~~
-abp.c:164:1: warning: return type defaults to 'int' [-Wimplicit-int]
-  164 | B_init()
-      | ^~~~~~
-abp.c:219:1: warning: return type defaults to 'int' [-Wimplicit-int]
-  219 | main()
-      | ^~~~
-abp.c: In function 'main':
-abp.c:228:4: warning: implicit declaration of function 'init'; did you mean 'B_init'? [-Wimplicit-function-declaration]
-  228 |    init();
-      |    ^~~~
-      |    B_init
-abp.c:254:13: warning: implicit declaration of function 'generate_next_arrival' [-Wimplicit-function-declaration]
-  254 |             generate_next_arrival();   /* set up future arrival */
-      |             ^~~~~~~~~~~~~~~~~~~~~
-abp.c:281:6: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
-  281 |      free(eventptr->pktptr);          /* free the memory for packet */
-      |      ^~~~
-abp.c:281:6: warning: incompatible implicit declaration of built-in function 'free'
-abp.c:2:1: note: include '<stdlib.h>' or provide a declaration of 'free'
-    1 | #include <stdio.h>
-  +++ |+#include <stdlib.h>
-    2 | 
-abp.c:292:9: warning: incompatible implicit declaration of built-in function 'free'
-  292 |         free(eventptr);
-      |         ^~~~
-abp.c:292:9: note: include '<stdlib.h>' or provide a declaration of 'free'
-abp.c: At top level:
-abp.c:301:1: warning: return type defaults to 'int' [-Wimplicit-int]
-  301 | init()                         /* initialize the simulator */
-      | ^~~~
-abp.c: In function 'init':
-abp.c:320:4: warning: implicit declaration of function 'srand' [-Wimplicit-function-declaration]
-  320 |    srand(9999);              /* init random number generator */
-      |    ^~~~~
-abp.c:329:5: warning: implicit declaration of function 'exit' [-Wimplicit-function-declaration]
-  329 |     exit();
-      |     ^~~~
-abp.c:329:5: warning: incompatible implicit declaration of built-in function 'exit'
-abp.c:329:5: note: include '<stdlib.h>' or provide a declaration of 'exit'
-abp.c:329:5: error: too few arguments to function 'exit'
-abp.c: In function 'jimsrand':
-abp.c:349:7: warning: implicit declaration of function 'rand' [-Wimplicit-function-declaration]
-  349 |   x = rand()/mmm;            /* x should be uniform in [0,1] */
-      |       ^~~~
-abp.c: At top level:
-abp.c:357:1: warning: return type defaults to 'int' [-Wimplicit-int]
-  357 | generate_next_arrival()
-      | ^~~~~~~~~~~~~~~~~~~~~
-abp.c: In function 'generate_next_arrival':
-abp.c:361:11: warning: conflicting types for built-in function 'malloc'; expected 'void *(long long unsigned int)' [-Wbuiltin-declaration-mismatch]
-  361 |     char *malloc();
-      |           ^~~~~~
-abp.c:361:11: note: 'malloc' is declared in header '<stdlib.h>'
-abp.c:377:4: warning: implicit declaration of function 'insertevent' [-Wimplicit-function-declaration]
-  377 |    insertevent(evptr);
-      |    ^~~~~~~~~~~
-abp.c: At top level:
-abp.c:381:1: warning: return type defaults to 'int' [-Wimplicit-int]
-  381 | insertevent(p)
-      | ^~~~~~~~~~~
-abp.c:419:1: warning: return type defaults to 'int' [-Wimplicit-int]
-  419 | printevlist()
-      | ^~~~~~~~~~~
-abp.c:435:1: warning: return type defaults to 'int' [-Wimplicit-int]
-  435 | stoptimer(AorB)
-      | ^~~~~~~~~
-abp.c: In function 'stoptimer':
-abp.c:458:8: warning: incompatible implicit declaration of built-in function 'free'
-  458 |        free(q);
-      |        ^~~~
-abp.c:458:8: note: include '<stdlib.h>' or provide a declaration of 'free'
-abp.c:459:8: warning: 'return' with no value, in function returning non-void
-  459 |        return;
-      |        ^~~~~~
-abp.c:435:1: note: declared here
-  435 | stoptimer(AorB)
-      | ^~~~~~~~~
-abp.c: At top level:
-abp.c:465:1: warning: return type defaults to 'int' [-Wimplicit-int]
-  465 | starttimer(AorB,increment)
-      | ^~~~~~~~~~
-abp.c: In function 'starttimer':
-abp.c:481:7: warning: 'return' with no value, in function returning non-void
-  481 |       return;
-      |       ^~~~~~
-abp.c:465:1: note: declared here
-  465 | starttimer(AorB,increment)
-      | ^~~~~~~~~~
-abp.c: At top level:
-abp.c:494:1: warning: return type defaults to 'int' [-Wimplicit-int]
-  494 | tolayer3(AorB,packet)
-      | ^~~~~~~~
-abp.c: In function 'tolayer3':
-abp.c:512:7: warning: 'return' with no value, in function returning non-void
-  512 |       return;
-      |       ^~~~~~
-abp.c:494:1: note: declared here
-  494 | tolayer3(AorB,packet)
-      | ^~~~~~~~
-abp.c: At top level:
-abp.c:567:1: warning: return type defaults to 'int' [-Wimplicit-int]
-  567 | tolayer5(AorB,datasent)
-      | ^~~~~~~~
+
+EVENT time: 93.569748,  type: 1, fromlayer5  entity: 0
+A_output: send packet: aaaaaaaaaaaaaaaaaaa
+
+EVENT time: 99.062195,  type: 2, fromlayer3  entity: 1
+  B_input: recv message: aaaaaaaaaaaaaaaaaaa
+  B_input: send ACK.
+
+EVENT time: 101.561325,  type: 2, fromlayer3  entity: 0
+A_input: ACK
+
+EVENT time: 1607.715088,  type: 1, fromlayer5  entity: 0
+A_output: send packet: bbbbbbbbbbbbbbbbbbb
+
+EVENT time: 1609.116333,  type: 2, fromlayer3  entity: 1
+  B_input: recv message: bbbbbbbbbbbbbbbbbbb
+  B_input: send ACK.
+
+EVENT time: 1614.552979,  type: 2, fromlayer3  entity: 0
+A_input: ACK
+
+EVENT time: 2322.031250,  type: 1, fromlayer5  entity: 0
+A_output: send packet: ccccccccccccccccccc
+
+EVENT time: 2325.527344,  type: 2, fromlayer3  entity: 1
+  B_input: recv message: ccccccccccccccccccc
+  B_input: send ACK.
+
+EVENT time: 2328.412354,  type: 2, fromlayer3  entity: 0
+A_input: ACK
+
+EVENT time: 3332.804199,  type: 1, fromlayer5  entity: 0
+A_output: send packet: ddddddddddddddddddd
+          TOLAYER3: packet being corrupted
+
+EVENT time: 3337.380615,  type: 2, fromlayer3  entity: 1
+  B_input: packet corrupted. send NAK.
+
+EVENT time: 3341.256836,  type: 2, fromlayer3  entity: 0
+A_input: received NACK.
+A_resend: resend last packet: ddddddddddddddddddd.
+
+EVENT time: 3346.818115,  type: 2, fromlayer3  entity: 1
+  B_input: recv message: ddddddddddddddddddd
+  B_input: send ACK.
+          TOLAYER3: packet being lost
+
+EVENT time: 3351.256836,  type: 0, timerinterrupt   entity: 0
+A_timerinterrupt: resend last packet: ddddddddddddddddddd.
+
+EVENT time: 3357.204346,  type: 2, fromlayer3  entity: 1
+  B_input: not the expected seq. send the last ACK.
+
+EVENT time: 3359.402100,  type: 2, fromlayer3  entity: 0
+A_input: ACK
+
+EVENT time: 5057.893555,  type: 1, fromlayer5  entity: 0
+A_output: send packet: eeeeeeeeeeeeeeeeeee
+          TOLAYER3: packet being corrupted
+
+EVENT time: 5058.931152,  type: 1, fromlayer5  entity: 0
+A_output: wait for ack, ignoring the packet: fffffffffffffffffff
+
+EVENT time: 5062.472656,  type: 2, fromlayer3  entity: 1
+  B_input: packet corrupted. send NAK.
+
+EVENT time: 5064.000000,  type: 2, fromlayer3  entity: 0
+A_input: received NACK.
+A_resend: resend last packet: eeeeeeeeeeeeeeeeeee.
+
+EVENT time: 5065.919922,  type: 2, fromlayer3  entity: 1
+  B_input: recv message: eeeeeeeeeeeeeeeeeee
+  B_input: send ACK.
+          TOLAYER3: packet being corrupted
+
+EVENT time: 5074.000000,  type: 0, timerinterrupt   entity: 0
+A_timerinterrupt: resend last packet: eeeeeeeeeeeeeeeeeee.
+
+EVENT time: 5075.554688,  type: 2, fromlayer3  entity: 0
+A_input: packet is corrupted, ignoring the packet.
+
+EVENT time: 5080.081543,  type: 2, fromlayer3  entity: 1
+  B_input: not the expected seq. send the last ACK.
+
+EVENT time: 5084.000000,  type: 0, timerinterrupt   entity: 0
+A_timerinterrupt: resend last packet: eeeeeeeeeeeeeeeeeee.
+
+EVENT time: 5084.633301,  type: 2, fromlayer3  entity: 0
+A_input: ACK
+
+EVENT time: 5090.330566,  type: 2, fromlayer3  entity: 1
+  B_input: not the expected seq. send the last ACK.
+          TOLAYER3: packet being lost
+
+EVENT time: 6557.268066,  type: 1, fromlayer5  entity: 0
+A_output: send packet: ggggggggggggggggggg
+
+EVENT time: 6562.963867,  type: 2, fromlayer3  entity: 1
+  B_input: recv message: ggggggggggggggggggg
+  B_input: send ACK.
+          TOLAYER3: packet being corrupted
+
+EVENT time: 6567.268066,  type: 0, timerinterrupt   entity: 0
+A_timerinterrupt: resend last packet: ggggggggggggggggggg.
+
+EVENT time: 6570.817383,  type: 2, fromlayer3  entity: 0
+A_input: packet is corrupted, ignoring the packet.
+
+EVENT time: 6575.128906,  type: 2, fromlayer3  entity: 1
+  B_input: not the expected seq. send the last ACK.
+          TOLAYER3: packet being corrupted
+
+EVENT time: 6577.129883,  type: 2, fromlayer3  entity: 0
+A_input: packet is corrupted, ignoring the packet.
+
+EVENT time: 6577.268066,  type: 0, timerinterrupt   entity: 0
+A_timerinterrupt: resend last packet: ggggggggggggggggggg.
+
+EVENT time: 6578.428711,  type: 2, fromlayer3  entity: 1
+  B_input: not the expected seq. send the last ACK.
+          TOLAYER3: packet being corrupted
+
+EVENT time: 6582.625000,  type: 2, fromlayer3  entity: 0
+A_input: packet is corrupted, ignoring the packet.
+
+EVENT time: 6587.268066,  type: 0, timerinterrupt   entity: 0
+A_timerinterrupt: resend last packet: ggggggggggggggggggg.
+          TOLAYER3: packet being lost
+
+EVENT time: 6597.268066,  type: 0, timerinterrupt   entity: 0
+A_timerinterrupt: resend last packet: ggggggggggggggggggg.
+
+EVENT time: 6598.811523,  type: 2, fromlayer3  entity: 1
+  B_input: not the expected seq. send the last ACK.
+
+EVENT time: 6602.600586,  type: 2, fromlayer3  entity: 0
+A_input: ACK
+
+EVENT time: 7293.801758,  type: 1, fromlayer5  entity: 0
+A_output: send packet: hhhhhhhhhhhhhhhhhhh
+          TOLAYER3: packet being corrupted
+
+EVENT time: 7301.196777,  type: 2, fromlayer3  entity: 1
+  B_input: packet corrupted. send NAK.
+          TOLAYER3: packet being lost
+
+EVENT time: 7303.801758,  type: 0, timerinterrupt   entity: 0
+A_timerinterrupt: resend last packet: hhhhhhhhhhhhhhhhhhh.
+
+EVENT time: 7308.484375,  type: 2, fromlayer3  entity: 1
+  B_input: recv message: hhhhhhhhhhhhhhhhhhh
+  B_input: send ACK.
+
+EVENT time: 7311.453125,  type: 2, fromlayer3  entity: 0
+A_input: ACK
+
+EVENT time: 9007.599609,  type: 1, fromlayer5  entity: 0
+A_output: send packet: iiiiiiiiiiiiiiiiiii
+          TOLAYER3: packet being corrupted
+
+EVENT time: 9015.582031,  type: 2, fromlayer3  entity: 1
+  B_input: packet corrupted. send NAK.
+          TOLAYER3: packet being lost
+
+EVENT time: 9017.599609,  type: 0, timerinterrupt   entity: 0
+A_timerinterrupt: resend last packet: iiiiiiiiiiiiiiiiiii.
+
+EVENT time: 9023.338867,  type: 2, fromlayer3  entity: 1
+  B_input: recv message: iiiiiiiiiiiiiiiiiii
+  B_input: send ACK.
+          TOLAYER3: packet being corrupted
+
+EVENT time: 9027.599609,  type: 0, timerinterrupt   entity: 0
+A_timerinterrupt: resend last packet: iiiiiiiiiiiiiiiiiii.
+
+EVENT time: 9029.708008,  type: 2, fromlayer3  entity: 0
+A_input: packet is corrupted, ignoring the packet.
+
+EVENT time: 9033.036133,  type: 2, fromlayer3  entity: 1
+  B_input: not the expected seq. send the last ACK.
+          TOLAYER3: packet being corrupted
+
+EVENT time: 9034.062500,  type: 2, fromlayer3  entity: 0
+A_input: packet is corrupted, ignoring the packet.
+
+EVENT time: 9037.599609,  type: 0, timerinterrupt   entity: 0
+A_timerinterrupt: resend last packet: iiiiiiiiiiiiiiiiiii.
+          TOLAYER3: packet being corrupted
+
+EVENT time: 9046.106445,  type: 2, fromlayer3  entity: 1
+  B_input: packet corrupted. send NAK.
+
+EVENT time: 9047.449219,  type: 2, fromlayer3  entity: 0
+A_input: received NACK.
+A_resend: resend last packet: iiiiiiiiiiiiiiiiiii.
+
+EVENT time: 9048.499023,  type: 2, fromlayer3  entity: 1
+  B_input: not the expected seq. send the last ACK.
+          TOLAYER3: packet being lost
+
+EVENT time: 9057.449219,  type: 0, timerinterrupt   entity: 0
+A_timerinterrupt: resend last packet: iiiiiiiiiiiiiiiiiii.
+
+EVENT time: 9061.534180,  type: 2, fromlayer3  entity: 1
+  B_input: not the expected seq. send the last ACK.
+
+EVENT time: 9062.545898,  type: 2, fromlayer3  entity: 0
+A_input: ACK
+
+EVENT time: 9790.765625,  type: 1, fromlayer5  entity: 0
+A_output: send packet: jjjjjjjjjjjjjjjjjjj
+
+EVENT time: 9793.796875,  type: 2, fromlayer3  entity: 1
+  B_input: recv message: jjjjjjjjjjjjjjjjjjj
+  B_input: send ACK.
+          TOLAYER3: packet being corrupted
+
+EVENT time: 9797.985352,  type: 2, fromlayer3  entity: 0
+A_input: packet is corrupted, ignoring the packet.
+
+EVENT time: 9800.765625,  type: 0, timerinterrupt   entity: 0
+A_timerinterrupt: resend last packet: jjjjjjjjjjjjjjjjjjj.
+
+EVENT time: 9810.701172,  type: 2, fromlayer3  entity: 1
+  B_input: not the expected seq. send the last ACK.
+          TOLAYER3: packet being lost
+
+EVENT time: 9810.765625,  type: 0, timerinterrupt   entity: 0
+A_timerinterrupt: resend last packet: jjjjjjjjjjjjjjjjjjj.
+
+EVENT time: 9819.795898,  type: 2, fromlayer3  entity: 1
+  B_input: not the expected seq. send the last ACK.
+          TOLAYER3: packet being lost
+
+EVENT time: 9820.765625,  type: 0, timerinterrupt   entity: 0
+A_timerinterrupt: resend last packet: jjjjjjjjjjjjjjjjjjj.
+          TOLAYER3: packet being corrupted
+
+EVENT time: 9824.845703,  type: 2, fromlayer3  entity: 1
+  B_input: packet corrupted. send NAK.
+          TOLAYER3: packet being corrupted
+
+EVENT time: 9829.381836,  type: 2, fromlayer3  entity: 0
+A_input: packet is corrupted, ignoring the packet.
+
+EVENT time: 9830.765625,  type: 0, timerinterrupt   entity: 0
+A_timerinterrupt: resend last packet: jjjjjjjjjjjjjjjjjjj.
+          TOLAYER3: packet being corrupted
+
+EVENT time: 9835.809570,  type: 2, fromlayer3  entity: 1
+  B_input: packet corrupted. send NAK.
+
+EVENT time: 9840.765625,  type: 0, timerinterrupt   entity: 0
+A_timerinterrupt: resend last packet: jjjjjjjjjjjjjjjjjjj.
+          TOLAYER3: packet being corrupted
+
+EVENT time: 9845.251953,  type: 2, fromlayer3  entity: 1
+  B_input: packet corrupted. send NAK.
+
+EVENT time: 9845.398438,  type: 2, fromlayer3  entity: 0
+A_input: received NACK.
+A_resend: resend last packet: jjjjjjjjjjjjjjjjjjj.
+          TOLAYER3: packet being lost
+
+EVENT time: 9848.692383,  type: 2, fromlayer3  entity: 0
+A_input: received NACK.
+A_resend: resend last packet: jjjjjjjjjjjjjjjjjjj.
+
+EVENT time: 9852.514648,  type: 2, fromlayer3  entity: 1
+  B_input: not the expected seq. send the last ACK.
+
+EVENT time: 9858.692383,  type: 0, timerinterrupt   entity: 0
+A_timerinterrupt: resend last packet: jjjjjjjjjjjjjjjjjjj.
+          TOLAYER3: packet being corrupted
+
+EVENT time: 9859.336914,  type: 2, fromlayer3  entity: 0
+A_input: ACK
+
+EVENT time: 9860.536133,  type: 2, fromlayer3  entity: 1
+  B_input: packet corrupted. send NAK.
+          TOLAYER3: packet being corrupted
+
+EVENT time: 9868.864258,  type: 2, fromlayer3  entity: 0
+A_input: A->B unidirection only, ignoring the packet.
+ Simulator terminated at time 9868.864258
+ after sending 10 msgs from layer5
+
+Process returned 0 (0x0)   execution time : 0.170 s
+Press any key to continue.
