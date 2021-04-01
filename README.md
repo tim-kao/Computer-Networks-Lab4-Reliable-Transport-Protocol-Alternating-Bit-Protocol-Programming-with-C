@@ -5,6 +5,8 @@ Lab 4: Alternating-Bit-Protocol. \
 An SMTP client delivers email with text and image content.
 Implement the ABP state machine ![image](https://github.com/tim-kao/Computer-Networks-Lab4-Reliable-Transport-Protocol-Alternating-Bit-Protocol-Programming-with-C/blob/main/figpa21.gif)
 ## Demo ##
+Sample output(10 messages have been ACK'ed correctly at the receiver, a loss probability of
+0.1, and a corruption probability of 0.3, and a trace level of 2.)
 [Output log](https://github.com/tim-kao/Computer-Networks-Lab4-Reliable-Transport-Protocol-Alternating-Bit-Protocol-Programming-with-C/blob/main/output.log)
 
 ##  Usage Examples ##
